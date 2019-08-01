@@ -13,6 +13,7 @@ for x in $(ls -d */)
 do
     if [ $(containsElement $x "${blacklist[@]}" ; echo $?) == 1 ]
     then
+        echo 'Removing the below file'
         echo $x
         cd $x ; make clean ; cd $original_path
     fi
